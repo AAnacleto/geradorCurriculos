@@ -6,15 +6,16 @@
 .container{
   display: grid;
   height: 100vh;
-  grid-template-columns: 0.5fr 1fr;
+  width: 100%;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 2.5fr;
   grid-template-areas:
-  "nav nav"
-  "sidebar main"
-  "sidebar footer";
+  "nav nav nav nav "
+  "sidebar main main main"
+  "sidebar footer footer footer";
   grid-gap: 0.2rem;
   font-family: "Inter", sans-serif;
-
+  background: #EBEBEB;
 }
 
 
@@ -27,8 +28,12 @@ nav{
   grid-area: nav;
 }
 
+main{
+  grid-area: main;
+}
+
 #sidebar{
-  background: #18ffff;
+
   grid-area: sidebar;
   border-radius: var(--main-radius);
   padding-top: var(--main-padding);
