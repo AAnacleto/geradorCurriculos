@@ -1,0 +1,48 @@
+:root{
+  --main-radius:5px;
+  --main-padding:5px;
+}
+
+.container{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 0.2fr 2.5fr;
+  grid-template-areas:
+  "nav nav"
+  "sidebar main"
+  "sidebar footer";
+  grid-gap: 0.2rem;
+  font-family: "Inter", sans-serif;
+
+}
+
+
+nav{
+  background-color: #808080;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  text-align: center;
+  grid-area: nav;
+}
+
+#sidebar{
+  background: #18ffff;
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+li#menu {
+  text-transform: capitalize;
+}
+li#menu:hover{
+  background-color: gray;
+
+}
+li#menu a:hover {
+  color: white;
+  font-weight: bolder;
+}
+
