@@ -141,7 +141,60 @@
         </div>
      </div>
       <div *ngIf="cardForm===true">
-        aaaaaaaa
+        <fa-icon class="icon" [icon]="faPlus" (click)="cadastrarExperiencia()"></fa-icon>
+
+          <div class="card" *ngFor="let item of curriculo.experiencia; let i = index">
+            <div class="card-body">
+              <fa-icon class="icon" [icon]="faDash" (click)="removerExperiencia(i)"></fa-icon>
+
+              <div class="row">
+                <div class="col-lg-12">
+                  <label for="nome" class="control-label">Faculdade:</label>
+                  <input type="text" name="comp" id="comp" class="form-control">
+                </div>
+                <div class="col-lg-8">
+                  <label for="nome" class="control-label">Curso:</label>
+                  <input type="text" name="comp" id="comp" class="form-control">
+                </div>
+                <div class="col-lg-4">
+                  <label for="nome" class="control-label">Periodo:</label>
+                  <input type="text" name="comp" id="comp" class="form-control">
+                </div>
+
+                <div class="col-lg-2">
+                  <label for="turno" class="control-label">Turno:</label>
+                   <select class="form-control" aria-label=".form-select-lg example">
+                    <option selected>Selecione</option>
+                    <option value="1">Manhã</option>
+                    <option value="2">Tarde</option>
+                    <option value="3">Noite</option>
+                  </select>
+                </div>
+                <div class="col-lg-4">
+                  <label for="nome" class="control-label">Data inicio</label>
+                  <input type="date" name="comp" id="comp" class="form-control">
+                </div>
+                <div class="col-lg-4">
+                  <label for="nome" class="control-label">Data Termino</label>
+                  <input type="date" name="comp" id="comp" class="form-control">
+                </div>
+
+                <div class="col-lg-2">
+                  <label for="turno" class="control-label">Status:</label>
+                   <select class="form-control" aria-label=".form-select-lg example">
+                    <option selected>Selecione</option>
+                    <option value="1">Cursando</option>
+                    <option value="2">Terminado</option>
+                    <option value="3">Trancado</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
       </div>
     </div>
   </div>
@@ -157,6 +210,8 @@
         </div>
      </div>
       <div *ngIf="cardIdiomas===true">
+        <fa-icon class="icon" [icon]="faPlus"></fa-icon>
+
         aaaaaaaa
       </div>    </div>
   </div>
@@ -165,6 +220,7 @@
       <div class="row">
         <div class="col-lg-11">
          <h5 class="card-title">Cursos Complementares</h5>
+
         </div>
         <div class="col-lg-1">
          <fa-icon class="icon" [icon]="faAngleUp" *ngIf="cardCursos===true" (click)="abrirCursos()"></fa-icon>
@@ -172,6 +228,8 @@
         </div>
      </div>
       <div *ngIf="cardCursos===true">
+        <fa-icon class="icon" [icon]="faPlus"></fa-icon>
+
         aaaaaaaa
       </div>    </div>
   </div>

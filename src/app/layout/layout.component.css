@@ -11,8 +11,8 @@
   grid-template-rows: 0.2fr 2.5fr;
   grid-template-areas:
   "nav nav nav nav "
-  "sidebar main main main"
-  "sidebar footer footer footer";
+  "main main main main"
+  "footer footer footer footer";
   grid-gap: 0.2rem;
   font-family: "Inter", sans-serif;
   background: #EBEBEB;
