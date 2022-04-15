@@ -14,24 +14,24 @@
        <div class="row">
          <div class="form-group col-lg-12">
           <label for="nome" class="control-label">Nome Completo:</label>
-          <input type="text" class="form-control">
+          <input type="text" name="nome" class="form-control" [(ngModel)]="curriculo.dados.nome">
          </div>
         </div>
 
         <div class="row">
          <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Nacionalidade:</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="curriculo.dados.nacionalidade">
          </div>
 
          <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Estado Civil:</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="curriculo.dados.estado_civil">
          </div>
 
          <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Data de Nascimento:</label>
-          <input type="date" class="form-control">
+          <input type="date" class="form-control" [(ngModel)]="curriculo.dados.data_nascimento">
          </div>
 
         </div>
@@ -39,17 +39,17 @@
        <div class="row">
         <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Telefone:</label>
-          <input type="tel" class="form-control">
+          <input type="tel" class="form-control" [(ngModel)]="curriculo.dados.telefone">
         </div>
 
         <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Linkedin:</label>
-          <input type="url" class="form-control">
+          <input type="url" class="form-control" [(ngModel)]="curriculo.dados.linkedin">
         </div>
 
         <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Email:</label>
-          <input type="email" class="form-control">
+          <input type="email" class="form-control" [(ngModel)]="curriculo.dados.email">
         </div>
       </div>
 
@@ -72,35 +72,35 @@
       <div class="row">
         <div class="form-group col-lg-4">
           <label for="nome" class="control-label">CEP:</label>
-          <input type="text" name="cep" id="cep" class="form-control" [(ngModel)]="endereco.cep" (blur)="buscarCEP()">
+          <input type="text" name="cep" id="cep" class="form-control" [(ngModel)]="curriculo.endereco.cep" (blur)="buscarCEP()">
          </div>
          <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Bairro:</label>
-          <input type="text"  name="bairro" id="bairro" class="form-control" [(ngModel)]="endereco.bairro">
+          <input type="text"  name="bairro" id="bairro" class="form-control" [(ngModel)]="curriculo.endereco.bairro">
          </div>
          <div class="form-group col-lg-4">
           <label for="nome" class="control-label">Cidade:</label>
-          <input type="text" name="cidade" id="cidade" class="form-control" [(ngModel)]="endereco.localidade">
+          <input type="text" name="cidade" id="cidade" class="form-control" [(ngModel)]="curriculo.endereco.localidade">
          </div>
       </div>
       <div class="row">
         <div class="form-group col-lg-10">
           <label for="nome" class="control-label">Logradouro:</label>
-          <input type="text" name="rua" id="rua" class="form-control" [(ngModel)]="endereco.logradouro">
+          <input type="text" name="rua" id="rua" class="form-control" [(ngModel)]="curriculo.endereco.logradouro">
          </div>
          <div class="form-group col-lg-2">
           <label for="nome" class="control-label">UF:</label>
-          <input type="text" name="uf" id="uf" class="form-control" [(ngModel)]="endereco.uf">
+          <input type="text" name="uf" id="uf" class="form-control" [(ngModel)]="curriculo.endereco.uf">
          </div>
       </div>
       <div class="row">
         <div class="form-group col-lg-10">
           <label for="nome" class="control-label">Complemento:</label>
-          <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="endereco.complemento">
+          <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.endereco.complemento">
          </div>
          <div class="form-group col-lg-2">
           <label for="nome" class="control-label">Número:</label>
-          <input type="text" name="numCasa" id="numCasa" class="form-control" [(ngModel)]="endereco.numCasa">
+          <input type="text" name="numCasa" id="numCasa" class="form-control" [(ngModel)]="curriculo.endereco.numCasa">
          </div>
       </div>
 
@@ -133,7 +133,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-lg-11">
-         <h5 class="card-title">Experiência Profissional</h5>
+         <h5 class="card-title">Formação Acadêmica</h5>
         </div>
         <div class="col-lg-1">
          <fa-icon class="icon" [icon]="faAngleUp" *ngIf="cardForm===true" (click)="abrirFormacao()"></fa-icon>
@@ -150,15 +150,15 @@
               <div class="row">
                 <div class="col-lg-12">
                   <label for="nome" class="control-label">Faculdade:</label>
-                  <input type="text" name="comp" id="comp" class="form-control">
+                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].faculdade">
                 </div>
                 <div class="col-lg-8">
                   <label for="nome" class="control-label">Curso:</label>
-                  <input type="text" name="comp" id="comp" class="form-control">
+                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].curso">
                 </div>
                 <div class="col-lg-4">
                   <label for="nome" class="control-label">Periodo:</label>
-                  <input type="text" name="comp" id="comp" class="form-control">
+                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].periodo">
                 </div>
 
                 <div class="col-lg-2">
@@ -172,11 +172,11 @@
                 </div>
                 <div class="col-lg-4">
                   <label for="nome" class="control-label">Data inicio</label>
-                  <input type="date" name="comp" id="comp" class="form-control">
+                  <input type="date" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].data_inicio">
                 </div>
                 <div class="col-lg-4">
                   <label for="nome" class="control-label">Data Termino</label>
-                  <input type="date" name="comp" id="comp" class="form-control">
+                  <input type="date" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].data_termino">
                 </div>
 
                 <div class="col-lg-2">
@@ -210,17 +210,37 @@
         </div>
      </div>
       <div *ngIf="cardIdiomas===true">
-        <fa-icon class="icon" [icon]="faPlus"></fa-icon>
+        <fa-icon class="icon" [icon]="faPlus" (click)="cadastrarIdioma()"></fa-icon>
+           <div class="card" *ngFor="let item of curriculo.idiomas; let i = index">
+               <div class="card-body">
+                <fa-icon class="icon" [icon]="faDash" (click)="removerIdiomas(i)"></fa-icon>
 
-        aaaaaaaa
-      </div>    </div>
+                  <div class="row">
+                      <div class="col-lg-6">
+                        <label for="nome" class="control-label">Idioma:</label>
+                        <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.idiomas[i].nome">
+                      </div>
+                      <div class="col-lg-6">
+                        <label for="nome" class="control-label">Proeficiencia:</label>
+                        <select class="form-control" aria-label=".form-select-lg example">
+                          <option selected>Selecione</option>
+                          <option value="1">Iniciante</option>
+                          <option value="2">Intermediario</option>
+                          <option value="3">Avançado</option>
+                        </select>
+                      </div>
+                  </div>
+               </div>
+           </div>
+
+      </div>
+     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <div class="row">
         <div class="col-lg-11">
          <h5 class="card-title">Cursos Complementares</h5>
-
         </div>
         <div class="col-lg-1">
          <fa-icon class="icon" [icon]="faAngleUp" *ngIf="cardCursos===true" (click)="abrirCursos()"></fa-icon>
@@ -228,9 +248,47 @@
         </div>
      </div>
       <div *ngIf="cardCursos===true">
-        <fa-icon class="icon" [icon]="faPlus"></fa-icon>
+        <fa-icon class="icon" [icon]="faPlus" (click)="cadastrarCurso()"></fa-icon>
+          <div class="card" *ngFor="let item of curriculo.cursos; let i = index">
+            <div class="card-body">
+            <fa-icon class="icon" [icon]="faDash" (click)="removerCurso(i)"></fa-icon>
 
-        aaaaaaaa
-      </div>    </div>
-  </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <label for="nome" class="control-label">Curso:</label>
+                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.cursos[i].nome">
+                </div>
+                <div class="col-lg-12">
+                  <label for="nome" class="control-label">Instituição:</label>
+                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.cursos[i].instituicao">
+                </div>
+
+                <div class="col-lg-4">
+                  <label for="nome" class="control-label">Data inicio</label>
+                  <input type="date" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.cursos[i].data_inicio">
+                </div>
+                <div class="col-lg-4">
+                  <label for="nome" class="control-label">Data Termino</label>
+                  <input type="date" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.cursos[i].data_termino">
+                </div>
+
+                <div class="col-lg-4">
+                  <label for="turno" class="control-label">Status:</label>
+                   <select class="form-control" aria-label=".form-select-lg example">
+                    <option selected>Selecione</option>
+                    <option value="1">Cursando</option>
+                    <option value="2">Terminado</option>
+                    <option value="3">Trancado</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      </div>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" (click)="cadastrarCurriculo()"> Gerar Curriculo</button>
+    </div>
 </app-layout>

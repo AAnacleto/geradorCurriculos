@@ -1,3 +1,5 @@
+import { Cursos } from './class/cursos';
+import { Idiomas } from './class/idiomas';
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -38,10 +40,13 @@ export class HomeComponent implements OnInit {
   endereco: Endereco = new Endereco();
   curriculo: Curriculo = new Curriculo();
   experiencia: Experiencia_Profissional = new Experiencia_Profissional();
+  idiomas: Idiomas = new Idiomas();
+  cursos: Cursos = new Cursos();
 
   constructor( public homeservice: HomeService) { }
 
   ngOnInit(): void {
+
   }
 
   abrirDados(){
@@ -69,10 +74,10 @@ export class HomeComponent implements OnInit {
   }
 
   buscarCEP(){
-    console.log(this.endereco.cep);
-    this.homeservice.buscarCEP(this.endereco.cep).subscribe(
+    console.log(this.curriculo.endereco.cep);
+    this.homeservice.buscarCEP(this.curriculo.endereco.cep).subscribe(
       data => {
-        this.endereco = (data as Endereco);
+        this.curriculo.endereco = (data as Endereco);
         console.log(this.endereco);
 
       }
@@ -85,5 +90,25 @@ export class HomeComponent implements OnInit {
   removerExperiencia(i: any){
   this.curriculo.experiencia.splice(i);
   }
+
+  cadastrarIdioma(){
+    this.curriculo.idiomas.push(this.idiomas);
+  }
+  removerIdiomas(i: any){
+  this.curriculo.idiomas.splice(i);
+  }
+
+  cadastrarCurso(){
+    this.curriculo.cursos.push(this.cursos);
+  }
+  removerCurso(i: any){
+  this.curriculo.cursos.splice(i);
+  }
+
+  cadastrarCurriculo(){
+    console.log(this.curriculo);
+
+  }
+
 
 }

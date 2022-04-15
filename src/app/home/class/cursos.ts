@@ -3,5 +3,6 @@ export class Cursos{
   instituicao: string = " ";
   nome: string = " ";
   horas: string = " ";
-  duracao: string = " ";
+  data_inicio: string = " ";
+  data_termino: string =  " ";
 }
