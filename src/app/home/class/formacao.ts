@@ -1,6 +1,6 @@
 export class Formacao{
   id: number = 0;
-  faculdade: string = " ";
+  nome_faculdade: string = " ";
   curso: string = " ";
   periodo: string = " ";
   turno: string = " ";

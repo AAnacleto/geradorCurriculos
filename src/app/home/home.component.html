@@ -122,7 +122,7 @@
         <div class="row">
           <div class="col-lg-12">
             <label for="nome" class="control-label">Descreva o objetivo aqui:</label>
-            <textarea class="form-control" id="textarea" rows="3"></textarea>
+            <textarea class="form-control" id="textarea" rows="3" [(ngModel)]="curriculo.objetivo"></textarea>
 
           </div>
         </div>
@@ -141,51 +141,47 @@
         </div>
      </div>
       <div *ngIf="cardForm===true">
-        <fa-icon class="icon" [icon]="faPlus" (click)="cadastrarExperiencia()"></fa-icon>
+        <fa-icon class="icon" [icon]="faPlus" (click)="cadastrarFormacao()"></fa-icon>
 
-          <div class="card" *ngFor="let item of curriculo.experiencia; let i = index">
+          <div class="card" *ngFor="let item of curriculo.formacao; let i = index">
             <div class="card-body">
-              <fa-icon class="icon" [icon]="faDash" (click)="removerExperiencia(i)"></fa-icon>
+              <fa-icon class="icon" [icon]="faDash" (click)="removerFormacao(i)"></fa-icon>
 
               <div class="row">
                 <div class="col-lg-12">
                   <label for="nome" class="control-label">Faculdade:</label>
-                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].faculdade">
+                  <input type="text" name="faculdade" id="faculdade" class="form-control" [(ngModel)]="curriculo.formacao[i].nome_faculdade">
                 </div>
                 <div class="col-lg-8">
                   <label for="nome" class="control-label">Curso:</label>
-                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].curso">
+                  <input type="text" name="curso" id="curso" class="form-control" [(ngModel)]="curriculo.formacao[i].curso">
                 </div>
                 <div class="col-lg-4">
                   <label for="nome" class="control-label">Periodo:</label>
-                  <input type="text" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].periodo">
+                  <input type="text" name="periodo" id="periodo" class="form-control" [(ngModel)]="curriculo.formacao[i].periodo">
                 </div>
 
                 <div class="col-lg-2">
                   <label for="turno" class="control-label">Turno:</label>
-                   <select class="form-control" aria-label=".form-select-lg example">
-                    <option selected>Selecione</option>
-                    <option value="1">Manhã</option>
-                    <option value="2">Tarde</option>
-                    <option value="3">Noite</option>
+                    <select class="form-control" [(ngModel)]="curriculo.formacao[i].turno" >
+                    <option selected [ngValue]="null">Selecione</option>
+                    <option *ngFor="let turno of turnos" [ngValue]="turno.turno">{{turno.turno}}</option>
                   </select>
                 </div>
                 <div class="col-lg-4">
-                  <label for="nome" class="control-label">Data inicio</label>
-                  <input type="date" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].data_inicio">
+                  <label for="data_inicio" class="control-label">Data inicio</label>
+                  <input type="date" name="data_inicio" id="data_inicio" class="form-control" [(ngModel)]="curriculo.formacao[i].data_inicio">
                 </div>
                 <div class="col-lg-4">
-                  <label for="nome" class="control-label">Data Termino</label>
-                  <input type="date" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.formacao[i].data_termino">
+                  <label for="data_termino" class="control-label">Data Termino</label>
+                  <input type="date" name="data_termino" id="data_termino" class="form-control" [(ngModel)]="curriculo.formacao[i].data_termino">
                 </div>
 
                 <div class="col-lg-2">
-                  <label for="turno" class="control-label">Status:</label>
-                   <select class="form-control" aria-label=".form-select-lg example">
-                    <option selected>Selecione</option>
-                    <option value="1">Cursando</option>
-                    <option value="2">Terminado</option>
-                    <option value="3">Trancado</option>
+                  <label for="status" class="control-label">Status:</label>
+                  <select class="form-control" [(ngModel)]="curriculo.formacao[i].status" >
+                    <option selected [ngValue]="null">Selecione</option>
+                    <option *ngFor="let item of statusCurso" [ngValue]="item.status">{{item.status}}</option>
                   </select>
                 </div>
               </div>
@@ -222,11 +218,9 @@
                       </div>
                       <div class="col-lg-6">
                         <label for="nome" class="control-label">Proeficiencia:</label>
-                        <select class="form-control" aria-label=".form-select-lg example">
-                          <option selected>Selecione</option>
-                          <option value="1">Iniciante</option>
-                          <option value="2">Intermediario</option>
-                          <option value="3">Avançado</option>
+                        <select class="form-control" aria-label=".form-select-lg example" [(ngModel)]="curriculo.idiomas[i].proeficiencia" >
+                          <option selected [ngValue]="null">Selecione</option>
+                          <option *ngFor="let item of proeficiencia" [ngValue]="item.nivel">{{item.nivel}}</option>
                         </select>
                       </div>
                   </div>
@@ -272,15 +266,7 @@
                   <input type="date" name="comp" id="comp" class="form-control" [(ngModel)]="curriculo.cursos[i].data_termino">
                 </div>
 
-                <div class="col-lg-4">
-                  <label for="turno" class="control-label">Status:</label>
-                   <select class="form-control" aria-label=".form-select-lg example">
-                    <option selected>Selecione</option>
-                    <option value="1">Cursando</option>
-                    <option value="2">Terminado</option>
-                    <option value="3">Trancado</option>
-                  </select>
-                </div>
+
               </div>
             </div>
           </div>

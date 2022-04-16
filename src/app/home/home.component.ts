@@ -14,6 +14,7 @@ import { Curriculo } from './class/curriculo';
 import { Endereco } from './class/endereco';
 import { Experiencia_Profissional } from './class/experiencia_profissional';
 import { HomeService } from './servico/home.service';
+import { Formacao } from './class/formacao';
 
 
 @Component({
@@ -34,18 +35,29 @@ export class HomeComponent implements OnInit {
   cardEnd: boolean = false;
   cardObj: boolean = false;
   cardForm: boolean = false;
+  cardExp: boolean = false;
   cardIdiomas: boolean = false;
   cardCursos: boolean = false;
 
   endereco: Endereco = new Endereco();
   curriculo: Curriculo = new Curriculo();
   experiencia: Experiencia_Profissional = new Experiencia_Profissional();
+  formacao: Formacao = new Formacao();
   idiomas: Idiomas = new Idiomas();
   cursos: Cursos = new Cursos();
+
+  turnos: any[] = [{ id: 1 , turno:"Manhã"},{id: 2, turno: "Tarde"},{ id: 3 , turno:"Noite"}];
+  statusCurso: any[] = [{ id: 1 , status:"Cursando"},{id: 2, status: "Terminado"},{ id: 3 , status:"Trancado"}];
+  proeficiencia: any[]= [{ id: 1 , nivel:"Iniciante"},{id: 2, nivel: "Intermediario"},{ id: 3 , nivel:"Fluente"}];
 
   constructor( public homeservice: HomeService) { }
 
   ngOnInit(): void {
+    console.log(this.turnos);
+    console.log(this.statusCurso);
+    console.log(this.proeficiencia);
+
+
 
   }
 
@@ -89,6 +101,13 @@ export class HomeComponent implements OnInit {
   }
   removerExperiencia(i: any){
   this.curriculo.experiencia.splice(i);
+  }
+
+  cadastrarFormacao(){
+    this.curriculo.formacao.push(this.formacao);
+  }
+  removerFormacao(i: any){
+  this.curriculo.formacao.splice(i);
   }
 
   cadastrarIdioma(){
