@@ -104,6 +104,7 @@ export class HomeComponent implements OnInit {
   }
 
   cadastrarFormacao(){
+    this.formacao = new Formacao();
     this.curriculo.formacao.push(this.formacao);
   }
   removerFormacao(i: any){

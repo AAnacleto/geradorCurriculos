@@ -7,4 +7,5 @@ export class Formacao{
   data_inicio: string = " ";
   data_termino: string = " ";
   status: string = " ";
+  statusCurso: any[] = [{ id: 1 , status:"Cursando"},{id: 2, status: "Terminado"},{ id: 3 , status:"Trancado"}];
 }
