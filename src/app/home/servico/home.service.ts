@@ -1,3 +1,4 @@
+import { Curriculo } from './../class/curriculo';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,5 +14,9 @@ export class HomeService {
    buscarCEP(cep: string){
      this.retorno = cep.trim();
      return this.http.get('https://viacep.com.br/ws/'+this.retorno+'/json/');
+   }
+
+   salvarCurriculo(curriculo: Curriculo){
+     return this.http.post('http://localhost:3000/Curriculo', curriculo);
    }
 }

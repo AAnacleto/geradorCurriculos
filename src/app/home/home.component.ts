@@ -97,6 +97,7 @@ export class HomeComponent implements OnInit {
   }
 
   cadastrarExperiencia(){
+    this.experiencia = new Experiencia_Profissional();
     this.curriculo.experiencia.push(this.experiencia);
   }
   removerExperiencia(i: any){
@@ -112,6 +113,7 @@ export class HomeComponent implements OnInit {
   }
 
   cadastrarIdioma(){
+    this.idiomas = new Idiomas();
     this.curriculo.idiomas.push(this.idiomas);
   }
   removerIdiomas(i: any){
@@ -119,6 +121,7 @@ export class HomeComponent implements OnInit {
   }
 
   cadastrarCurso(){
+    this.cursos = new Cursos();
     this.curriculo.cursos.push(this.cursos);
   }
   removerCurso(i: any){
@@ -127,6 +130,12 @@ export class HomeComponent implements OnInit {
 
   cadastrarCurriculo(){
     console.log(this.curriculo);
+    this.homeservice.salvarCurriculo(this.curriculo).subscribe(
+      data =>{
+        console.log(data);
+
+      }
+    )
 
   }
 
