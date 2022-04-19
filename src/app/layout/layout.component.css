@@ -3,6 +3,12 @@
   --main-padding:5px;
 }
 
+html, body {
+  height: 100%;
+  position: absolute;
+
+}
+
 .container{
   display: grid;
   height: 100vh;
@@ -11,11 +17,14 @@
   grid-template-rows: 0.2fr 2.5fr;
   grid-template-areas:
   "nav nav nav nav "
-  "main main main main"
-  "footer footer footer footer";
+  "sidebar main main main"
+  "sidebar footer footer footer";
   grid-gap: 0.2rem;
   font-family: "Inter", sans-serif;
   background: #EBEBEB;
+  overflow:scroll;
+
+
 }
 
 

@@ -3,7 +3,7 @@ export class Dados{
   nacionalidade: string = " ";
   estado_civil: string = " ";
   data_nascimento: string = " ";
-  idade: string = " ";
+  idade: number = 0 ;
   telefone: string = " ";
   email: string = " ";
   linkedin: string = " ";

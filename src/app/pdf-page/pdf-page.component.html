@@ -1,5 +1,74 @@
 <app-layout>
-<div style="margin: 0 100px;">
-   <h1>{{curriculo.dados.nome}}</h1>
-</div>
+  <div style="margin: 0 100px" id="principal">
+    <h2>{{ curriculo.dados.nome }}</h2>
+    <h6>
+      {{ curriculo.dados.nacionalidade }},{{ curriculo.dados.estado_civil }},{{
+        this.curriculo.dados.idade
+      }}
+      anos
+    </h6>
+    <h6>
+      {{ curriculo.endereco.logradouro }},{{ curriculo.endereco.numCasa }},{{
+        curriculo.endereco.bairro
+      }}
+      - {{ curriculo.endereco.localidade }}/{{ curriculo.endereco.uf }}
+    </h6>
+    <h6><b>Fone:</b>{{ curriculo.dados.telefone }}</h6>
+    <h6><b>Linkedin:</b>{{ curriculo.dados.linkedin }}</h6>
+    <h6><b>Email:</b>{{ curriculo.dados.email }}</h6>
+    <h6><b>Github:</b>{{ curriculo.dados.github }}</h6>
+
+    <div id="objetivo" class="sessao">
+      <h4>Objetivo</h4>
+      <h6>{{ curriculo.objetivo }}</h6>
+    </div>
+
+    <div id="formacao" class="sessao">
+      <h2>Formação Acadêmica</h2>
+      <div *ngFor="let item of curriculo.formacao" class="faculdades">
+        <h4>
+          <b>{{ item.nome_faculdade }}</b>
+        </h4>
+        <h6>{{ item.curso }}, {{ item.periodo }}, turno: {{ item.turno }}</h6>
+        <h6 *ngIf="item.status === 'Cursando'">
+          Previsão de conclusão: {{ item.data_termino }}
+        </h6>
+        <h6 *ngIf="item.status === 'Terminado'">
+          Status: {{ item.status }} em {{ item.data_termino }}
+        </h6>
+      </div>
+    </div>
+
+    <div id="experiencia" class="sessao">
+      <h2>Experiência Profissional</h2>
+      <div *ngFor="let item of curriculo.experiencia">
+         <h4><b>{{item.empresa}}</b></h4>
+         <h6>{{item.cargo}} </h6>
+         <h6>Periodo: {{item.data_inicio}} a {{item.data_termino}}</h6>
+         <h6>Principais Atividades:</h6>
+         <p>{{item.atividades}} </p>
+      </div>
+    </div>
+
+    <div id="idiomas" class="sessao">
+      <h2>Idiomas</h2>
+      <div *ngFor="let item of curriculo.idiomas">
+         <div class="row">
+            <div class="col-lg-6">
+              {{item.nome}}
+            </div>
+            <div class="col-lg-6">
+              {{item.proeficiencia}}
+            </div>
+         </div>
+      </div>
+
+    </div>
+
+    <div id="cursos" class="sessao">
+      <h2>Cursos Complementares</h2>
+      <h5></h5>
+    </div>
+  </div>
+
 </app-layout>

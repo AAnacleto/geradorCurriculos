@@ -12,6 +12,7 @@ export class PdfPageComponent implements OnInit {
 
   id: string = " ";
   curriculo: Curriculo = new Curriculo();
+  data = new Date();
 
   emitter: EventEmitter<void> = new EventEmitter();
 
@@ -31,6 +32,11 @@ export class PdfPageComponent implements OnInit {
       data => {
         this.curriculo = (data as Curriculo[])[0];
         console.log(this.curriculo);
+
+        const dataCompleta = this.curriculo.dados.data_nascimento.split("-")
+        const anoNasc = parseInt(dataCompleta[0])
+        const anoAtual = this.data.getFullYear()
+        this.curriculo.dados.idade = anoAtual - anoNasc;
 
       }
     )
