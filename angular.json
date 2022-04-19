@@ -22,6 +22,9 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "html2pdf.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -35,7 +38,8 @@
 
               "node_modules/jquery/dist/jquery.js",
             	"node_modules/popper.js/dist/umd/popper.js",
-            	"node_modules/bootstrap/dist/js/bootstrap.js"
+            	"node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"
             ]
           },
           "configurations": {

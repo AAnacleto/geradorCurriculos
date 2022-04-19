@@ -57,6 +57,9 @@
 
      </div>
   </div>
+
+
+
   <div class="card">
     <div class="card-body">
     <div class="row">
@@ -107,6 +110,8 @@
     </div>
   </div>
   </div>
+
+
   <div class="card">
     <div class="card-body">
       <div class="row">
@@ -188,13 +193,58 @@
               </div>
             </div>
           </div>
-
-
-
-
       </div>
     </div>
   </div>
+
+  <div class="card">
+    <div class="card-body">
+        <div class="row">
+           <div class="col-lg-11">
+             <h5 class="card-title">Experiencia Profissional</h5>
+           </div>
+           <div class="col-lg-1">
+            <fa-icon class="icon" [icon]="faAngleUp" *ngIf="cardExp===true" (click)="abrirExperiencia()"></fa-icon>
+            <fa-icon class="icon" [icon]="faAngleDown" *ngIf="cardExp===false" (click)="abrirExperiencia()"></fa-icon>
+           </div>
+        </div>
+        <div *ngIf="cardExp==true">
+          <fa-icon class="icon" [icon]="faPlus" (click)="cadastrarExperiencia()"></fa-icon>
+
+          <div class="card" *ngFor="let item of curriculo.experiencia; let i = index">
+            <div class="card-body">
+              <fa-icon class="icon" [icon]="faDash" (click)="removerFormacao(i)"></fa-icon>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <label for="nome" class="control-label">Empresa:</label>
+              <input type="text" name="empresa" id="empresa" class="form-control" [(ngModel)]="curriculo.experiencia[i].empresa">
+            </div>
+            <div class="col-lg-12">
+              <label for="nome" class="control-label">Cargo:</label>
+              <input type="text" name="cargo" id="cargo" class="form-control" [(ngModel)]="curriculo.experiencia[i].cargo">
+            </div>
+            <div class="col-lg-6">
+              <label for="data_inicio" class="control-label">Data inicio</label>
+              <input type="date" name="data_inicio" id="data_inicio" class="form-control" [(ngModel)]="curriculo.experiencia[i].data_inicio">
+            </div>
+            <div class="col-lg-6">
+              <label for="data_termino" class="control-label">Data Termino</label>
+              <input type="date" name="data_termino" id="data_termino" class="form-control" [(ngModel)]="curriculo.experiencia[i].data_termino">
+            </div>
+            <div class="col-lg-12">
+              <label for="nome" class="control-label">Principais Atividades:</label>
+              <textarea class="form-control" id="textarea" rows="3" [(ngModel)]="curriculo.experiencia[i].atividades"></textarea>
+
+            </div>
+        </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
   <div class="card">
     <div class="card-body">
       <div class="row">

@@ -19,4 +19,8 @@ export class HomeService {
    salvarCurriculo(curriculo: Curriculo){
      return this.http.post('http://localhost:3000/Curriculo', curriculo);
    }
+
+   consultarCurriculo(id: string){
+     return this.http.get('http://localhost:3000/Curriculo?id='+ id);
+   }
 }

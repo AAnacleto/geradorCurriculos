@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PdfPageComponent } from './pdf-page/pdf-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    HomeComponent
+    HomeComponent,
+    PdfPageComponent
   ],
   imports: [
     BrowserModule,
