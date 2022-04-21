@@ -4,6 +4,8 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AcroFormPasswordField, jsPDF } from 'jspdf';
 import { ElementRef, ViewChild } from '@angular/core';
+import html2canvas from 'html2canvas';
+
 
 @Component({
   selector: 'app-pdf-page',
@@ -54,6 +56,8 @@ export class PdfPageComponent implements OnInit {
       }
     })
   }
+
+
 
 
 
