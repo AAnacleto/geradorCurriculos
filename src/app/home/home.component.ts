@@ -165,36 +165,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-//   createPDF(){
-//     this.curriculoPDF.clear();
-//     const factory = this.resolver.resolveComponentFactory(PdfPageComponent);
-//     const componentRef = this.curriculoPDF.createComponent(factory);
-
-//     componentRef.instance.curriculo = this.curriculo;
-
-//     componentRef.instance.emitter.subscribe(() => {
-//       const config = {
-//         html2canvas: {
-//           scale: 1,
-//           scrollX: 0,
-//           scrollY: 0,
-//         },
-//       };
-
-//       this.print(componentRef.location.nativeElement, config);
-//       componentRef.destroy();
-
-//     });
-
-// }
-
-// private print(content: any, config: any): void {
-//   html2pdf()
-//     .set(config)
-//     .from(content)
-//     .toPdf()
-//     .outputPdf('dataurlnewwindow');
-// }
 
 
 
