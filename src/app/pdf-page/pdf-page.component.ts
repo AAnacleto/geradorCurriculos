@@ -2,6 +2,8 @@ import { HomeService } from './../home/servico/home.service';
 import { Curriculo } from './../home/class/curriculo';
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AcroFormPasswordField, jsPDF } from 'jspdf';
+import { ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-pdf-page',
@@ -16,6 +18,7 @@ export class PdfPageComponent implements OnInit {
 
   emitter: EventEmitter<void> = new EventEmitter();
 
+  @ViewChild('principal', {static: false}) el!: ElementRef;
 
   constructor(public homeservice: HomeService, private routeActivated: ActivatedRoute) { }
 
@@ -41,6 +44,15 @@ export class PdfPageComponent implements OnInit {
       }
     )
 
+  }
+
+  printPDF(){
+    let pdf = new jsPDF("p", "pt", "a4");
+    pdf.html(this.el.nativeElement, {
+      callback: (pdf) => {
+        pdf.save('Curriculo.pdf');
+      }
+    })
   }
 
 

@@ -13,3 +13,8 @@ div#principal{
   border-radius: 2%;
 
 }
+
+.button{
+  margin-top: 20px;
+  margin-right: -100px;
+}

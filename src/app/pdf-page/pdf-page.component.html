@@ -1,5 +1,5 @@
 <app-layout>
-  <div style="margin: 0 100px" id="principal">
+  <div style="margin: 0 100px" id="principal" #principal>
     <h2>{{ curriculo.dados.nome }}</h2>
     <h6>
       {{ curriculo.dados.nacionalidade }},{{ curriculo.dados.estado_civil }},{{
@@ -70,5 +70,5 @@
       <h5></h5>
     </div>
   </div>
-
+  <button style="margin: 25px 700px 75px" type="button" class="btn btn-dark btn-lg" (click)="printPDF()"> Gerar PDF</button>
 </app-layout>
