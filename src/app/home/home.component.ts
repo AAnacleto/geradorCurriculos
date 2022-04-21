@@ -74,10 +74,7 @@ export class HomeComponent implements OnInit {
     this.curriculo.idiomas.push(this.idiomas = new Idiomas());
   }
 
-  // selectItems(): void {
 
-  //   this.createPDF();
-  // }
 
   abrirDados(){
     this.cardDados = !this.cardDados;
