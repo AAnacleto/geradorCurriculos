@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeService {
   retorno: string = " ";
+  url: string = "https://my-json-server.typicode.com/AAnacleto/backendFakee/"
+  localhost: string = "http://localhost:3000/Curriculo"
 
   constructor(private http: HttpClient) { }
 
@@ -17,10 +19,10 @@ export class HomeService {
    }
 
    salvarCurriculo(curriculo: Curriculo){
-     return this.http.post('http://localhost:3000/Curriculo', curriculo);
+     return this.http.post(this.url, curriculo);
    }
 
    consultarCurriculo(id: string){
-     return this.http.get('http://localhost:3000/Curriculo?id='+ id);
+     return this.http.get(this.url + "Curriculo/?id="+ id);
    }
 }
